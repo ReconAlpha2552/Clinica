@@ -10,13 +10,10 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-
 import it.uniroma3.siw.spring.controller.validator.PrerequisitoValidator;
-import it.uniroma3.siw.spring.controller.validator.ProdottoValidator;
 import it.uniroma3.siw.spring.model.Prerequisito;
-import it.uniroma3.siw.spring.model.TipologiaEsame;
 import it.uniroma3.siw.spring.service.PrerequisitoService;
-import it.uniroma3.siw.spring.service.ProdottoService;
+
 
 @Controller
 public class PrerequisitoController {
@@ -28,7 +25,7 @@ public class PrerequisitoController {
     private PrerequisitoValidator prerequisitoValidator;
         
     @RequestMapping(value="/admin/prerequisitoForm", method = RequestMethod.GET)
-    public String addProdotto(Model model) {
+    public String addPrerequisito(Model model) {
     	model.addAttribute("prerequisito", new Prerequisito());
         return "Prerequisiti/prerequisitoform";
     }
@@ -40,7 +37,7 @@ public class PrerequisitoController {
     }
 
     @RequestMapping(value = "/prerequisitoForm", method = RequestMethod.POST)
-    public String addProdotto(@ModelAttribute("prerequisito") Prerequisito prerequisito, 
+    public String addPrerequisito(@ModelAttribute("prerequisito") Prerequisito prerequisito, 
     									Model model, BindingResult bindingResult) {
     	this.prerequisitoValidator.validate(prerequisito, bindingResult);
         if (!bindingResult.hasErrors()) {

@@ -5,26 +5,31 @@
 	<header th:replace="fragments/base.html :: intestazione"></header>
 	<div class="transparentbox">
 	<div>
-	<div class="center spaziaPoco riquadroDescr">Aggiungi la descrizione</div>
+	<div class="center">Descrizione</div>
 	  <div id="related_links" class="center">
-	  	<li th:each="indicatore : ${indicatori}">
-				<h5 th:text="${indicatore.nome}"></a>
+	  		<li th:each="indicatore : ${indicatori}">
+				  <div class="center">Aggiungi la descrizione</div>
+				  <p> </p>
 			</li>
     	<form th:action="@{'/aggIndicatore' +'/' + ${esame.id}}" method="POST" >
+    	<div>Numero indicatori</div>
       <h5 th:text="${indicatori.size()}"> </h5>
+      <div>Aggiungi il Risultato</div>
       <input type="text" th:field="${esame.risu[0]}" >
+      <div>Aggiungi il Risultato</div>
       <input type="text" th:field="${esame.risu[1]}" >
+      <div>Aggiungi il Risultato</div>
       <input type="text" th:field="${esame.risu[2]}" >
+      <div>Aggiungi il Risultato</div>
       <input type="text" th:field="${esame.risu[3]}" >
+      <div>Aggiungi il Risultato</div>
       <input type="text" th:field="${esame.risu[4]}" >
       
       <div>
 				<span><button type="submit">SUBMIT</button></span>
 			</div>
-      
-      
+  
      </form>
-				
 		
 		</div>
 	</div>

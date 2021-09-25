@@ -46,7 +46,7 @@ public class IndicatoreController {
     private EsameService esameService;
         
     @RequestMapping(value="/admin/indicatoreForm", method = RequestMethod.GET)
-    public String addProdotto(Model model) {
+    public String addPrerequisito(Model model) {
     	model.addAttribute("indicatore", new Indicatore());
         return "Indicatori/IndicatoreForm";
     }
@@ -58,7 +58,7 @@ public class IndicatoreController {
     }
 
     @RequestMapping(value = "/indicatoreForm", method = RequestMethod.POST)
-    public String addProdotto(@ModelAttribute("indicatore") Indicatore indicatore, 
+    public String addPrerequisito(@ModelAttribute("indicatore") Indicatore indicatore, 
     									Model model, BindingResult bindingResult) {
     	this.indicatoreValidator.validate(indicatore, bindingResult);
         if (!bindingResult.hasErrors()) {

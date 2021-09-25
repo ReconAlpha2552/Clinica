@@ -7,12 +7,13 @@
 </head>
 <body>
 	<header th:fragment="intestazione">
-		 <h1 class="header"> CLINICA ROSSI</h1>
+		 <h1 class="header"> CLINICA MIRKO</h1>
 		 <div class="topnavLogout">
        <a href="/default">Home</a>
        <a href="/esami">Esami</a>
-       <a href="/dottori">Dottori</a>
-       <a href="/login">Login</a>
+       <a href="/Medici">Medici</a>
+       <a href="/register">Login</a>
+        <a href="/TipologiaEsame">Tipologie Esami</a>
        <a th:href="@{/logout}">Logout</a>
        </div>	
 		 	</header>
@@ -25,8 +26,8 @@
 	
 	<footer th:fragment="fondo">
 	<div class="foot center">
-		<a th:href="@{${default}}">Home</a>
-		<span>-   Antonino Iaria 533712</span>
+		<a th:href="@{${home}}">Home</a>
+		<span>-   Mirko Cottini 533711</span>
 		</div>
 	</footer>
 </body>

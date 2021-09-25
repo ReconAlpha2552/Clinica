@@ -11,7 +11,7 @@
 		<ul>
 			<li th:each="tipologiaesame : ${tipologiaesami}">
 				<a href="tipologiaesame.html" 
-				   th:href="@{/'tipologiaesame' + '/' + ${tipologiaesame.id}}" 
+				   th:href="@{'/tipologiaesame' + '/' + ${tipologiaesame.id}}" 
 				   th:text="${tipologiaesame.nome}+ '   ' +${tipologiaesame.costo}"></a>
 			</li>
 		</ul>

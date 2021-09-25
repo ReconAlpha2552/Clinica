@@ -34,7 +34,7 @@ public class TipologiaEsameController {
     
         
     @RequestMapping(value="/admin/tipologiaesameForm", method = RequestMethod.GET)
-    public String addProdotto(Model model) {
+    public String addPrerequisito(Model model) {
     	model.addAttribute("tipologiaesame", new TipologiaEsame());
         return "TipologiaEsame/TipologiaesameForm";
     }
@@ -47,7 +47,7 @@ public class TipologiaEsameController {
     }
 
     @RequestMapping(value = "/tipologiaesameForm", method = RequestMethod.POST)
-    public String addProdotto(@ModelAttribute("tipologiaesami") TipologiaEsame tipologiaesami, 
+    public String addPrerequisito(@ModelAttribute("tipologiaesami") TipologiaEsame tipologiaesami, 
     									Model model, BindingResult bindingResult) {
     	this.tipologiaesamiValidator.validate(tipologiaesami, bindingResult);
         if (!bindingResult.hasErrors()) {

@@ -10,12 +10,15 @@
     	<h5>Nome:</h5>
     	<div class="center">
 			<h5 th:text="*{nome}">nome</h5>
+			</div>
+		<h5>Descrizione:</h5>
 			<div class="center">
 			<h5 th:text="*{descrizione}">descrizione</h5>
 			</div>
+		<h5>Costo:</h5>
 			<div class="center">
 			<h5 th:text="*{costo}">costo</h5>
-			
+			</div>
 			<ul>
 			<li th:each="Prerequisito : ${prerequisiti}">
 			<div th:if="${Prerequisito}" th:object="${Prerequaisito}">
@@ -29,8 +32,6 @@
 			
 			</div>
 			</div>
-			</div>
-		</div>
    		
     <footer th:replace="fragments/base.html :: fondo"></footer>
 </body>

@@ -22,7 +22,7 @@
 		
 	
 			<div>
-			
+			<span>Tipologia Esame:</span>
 				<select  name="taskTipologiaEsame">
                          <option value=""> -- </option>
                          <option th:each="tipologiaEsame : ${tipologiaEsami}"
@@ -33,6 +33,7 @@
 				
 			</div>	
 			
+			<span>Medico:</span>
 			<select  name="taskMedico">
                          <option value=""> -- </option>
                          <option th:each="medico : ${medici}"
@@ -40,6 +41,8 @@
                             th:utext="${medico.cognome}"/>
                   </select>
                   
+                  
+             <span>Paziente:</span>     
                   <select  name="taskPaziente">
                          <option value=""> -- </option>
                          <option th:each="paziente : ${pazienti}"

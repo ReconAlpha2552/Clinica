@@ -15,7 +15,32 @@
     	<div class="center">
 			<h5 th:text="*{prenotato}">descrizione</h5>
 			</div>
-   		</div>
+   		</div>	
+   		
+   		
+   		<div th:if="${esame}" th:object="${esame}">
+    	<h5>data sostenuto:</h5>
+    	<div class="center">
+			<h5 th:text="*{sostenuto}">descrizione</h5>
+			</div>
+   		</div>	
+   		
+   		<h5>risultato esame:</h5>
+   		<li th:each="risultato : ${risultati}">
+    	<div class="center">
+			<h5 th:text="${risultato}">descrizione</h5>
+			</div>
+   		</div>	
+   		</li>
+   		
+   		<h5>indicatori:</h5>
+   		<li th:each="indicatore : ${indicatori}">
+    	<div class="center">
+			<h5 th:text="${indicatore.nome}">descrizione</h5>
+			</div>
+   		</div>	
+   		</li>
+   		
    		
     </div>
     <footer th:replace="fragments/base.html :: fondo(home='/default')"></footer>

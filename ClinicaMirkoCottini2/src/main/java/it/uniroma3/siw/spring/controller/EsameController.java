@@ -1,6 +1,8 @@
 package it.uniroma3.siw.spring.controller;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -156,8 +158,24 @@ public class EsameController {
 	 @RequestMapping(value = "/esame/{id}", method = RequestMethod.GET)
 	    public String getmedico(@PathVariable("id") Long id, Model model) {
 	    	model.addAttribute("esame", this.esameService.esamePerId(id));
+	    	List<String> l = new ArrayList<>();
+	    	Collection<String> c = this.esameService.esamePerId(id).getRisultati().values();
+	    	l.addAll(c);
+	    	Collections.reverse(l);
+	    	model.addAttribute("risultati", l);
+	    	model.addAttribute("indicatori", this.esameService.esamePerId(id).getTipologiaesami().getIndicatori());
 	    	return "esame/esame";
 	    }
+	 
+	 
+	 
+	 
+	/* @RequestMapping(value = "/esame/{tid}/{pid}", method = RequestMethod.GET)
+	    public String getmedico(@PathVariable("pid") Long pid,@PathVariable("tid") Long tid, Model model) {
+	    	model.addAttribute("esame", this.esameService.esamePerId(pid));
+	    	model.addAttribute("tipologiaEsame", this.tipologiaEsameService.tipologiaesamiPerId(tid));
+	    	return "esame/esame";
+	    }*/
 	 
 	 
 	/*@RequestMapping(value = "/confermaEsame/{tid}/{pid}", method = RequestMethod.GET)

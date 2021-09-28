@@ -8,7 +8,9 @@
 	<div class="center">Descrizione</div>
 	  <div id="related_links" class="center">
 	  		<li th:each="indicatore : ${indicatori}">
-				  <div class="center">Aggiungi la descrizione</div>
+				  <div class="center">
+			<h5 th:text="${indicatore.nome}">descrizione</h5>
+			</div>
 				  <p> </p>
 			</li>
     	<form th:action="@{'/aggIndicatore' +'/' + ${esame.id}}" method="POST" >
